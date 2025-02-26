@@ -652,3 +652,117 @@ footer {
     }
   
   }
+
+
+  #client-reviews-section {
+    padding: 4rem 0;
+    background-color: var(--section-background-color);
+
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 3rem;
+      align-items: start;
+    }
+    
+    .section-title h2 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      line-height: 1.2;
+      color: var(--text-headline-color);
+      margin-bottom: 1.5rem;
+    }
+
+    .testimonials-container {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+    }
+
+    .testimonial-card {
+      background-color: var(--white-color);
+      border-radius: 8px;
+      padding: 2rem;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .quote-icon {
+      position: absolute;
+      top: -1.3rem;
+      left: 2rem;
+      font-size: 1.5rem;
+      color: var(--white-color);
+      background-color: var(--button-background-color);
+      border-radius: 6px;
+      padding-left: 0.3rem;
+      padding-right: 0.3rem;
+      box-shadow: 0 4px 4px rgba(0, 0, 0, 0.10);
+
+    }
+
+    .rating {
+      display: flex;
+      margin-bottom: 0rem;
+      gap: 4px;
+      color: #FFBA08;
+    }
+
+    .testimonial-text {
+      flex-grow: 1;
+      margin-bottom: 1.5rem;
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    .user-info {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .user-avatar {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+
+    .user-avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .user-details h4 {
+      margin: 0;
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text-headline-color);
+    }
+
+    .user-details p {
+      margin: 0;
+      font-size: 0.85rem;
+      color: var(--text-muted-color);
+    }
+  }
+  
+  
+  /* Responsiv anpassning för mindre skärmar */
+  @media (max-width: 992px) {
+    #client-reviews-section .reviews-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    #client-reviews-section .section-title {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    
+    #client-reviews-section .testimonials-container {
+      grid-template-columns: 1fr;
+    }
+  }
