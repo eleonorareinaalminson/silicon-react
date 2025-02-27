@@ -1,25 +1,42 @@
-import React from 'react'
+import React, { useContext, useState, useEffect } from 'react'
+import { TestimonialsContext } from '../contexts/TestimonialsContext'
+import Testimonial from './elements/Testimonial'
 
 const ClientReviews = () => {
+  const { testimonials } = useContext(TestimonialsContext);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
-  const testimonials = [
-    {
-      id: 1,
-      comment: "Sit pretium urna quis tempor, sed dolor sed maecenas rutrum sagittis. Laoreet posuere rhoncus, egestas justo, egestas justo aliquam vel. Nunc lectus nec hendrerit viverra justo turpis sit amet.",
-      name: "Fannie Summers",
-      title: "Designer",
-      image: "images/testimonials/person1.svg",
-      rating: 4
-    },
-    {
-      id: 2,
-      comment: "Nunc tincidunt leo vel venenatis accumsan vestibulum sollicitudin amet porttitor. Nisi bibendum nulla molestie eu enim ornare dictumst et amet. Dictum pretium dolor tincidunt egestas nget nunc.",
-      name: "Albert Flores",
-      title: "Developer",
-      image: "images/testimonials/person2.svg",
-      rating: 5
+  useEffect(() => {
+    // När testimonials är laddade, avsluta laddningstillståndet
+    if (testimonials && testimonials.length > 0) {
+      setLoading(false);
     }
-  ];
+  }, [testimonials]);
+
+  if (loading) {
+    return (
+      <section id="client-reviews-section">
+        <div className="container">
+          <div className="loading-testimonials">
+            <p>Loading testimonials...</p>
+          </div>
+        </div>
+      </section>
+    );
+  }
+
+  if (error) {
+    return (
+      <section id="client-reviews-section">
+        <div className="container">
+          <div className="error-testimonials">
+            <p>Failed to load testimonials: {error}</p>
+          </div>
+        </div>
+      </section>
+    );
+  }
 
   return (
     <section id="client-reviews-section">
@@ -30,33 +47,8 @@ const ClientReviews = () => {
           </div>
           
           <div className="testimonials-container">
-            {testimonials.map((testimonial) => (
-              <div className="testimonial-card" key={testimonial.id}>
-                <div className="quote-icon">
-                  <i className="bi bi-quote"></i>
-                </div>
-                
-                <div className="rating">
-                  {[...Array(5)].map((_, index) => (
-                    <i 
-                      key={index} 
-                      className={index < testimonial.rating ? "bi bi-star-fill" : "bi bi-star"}
-                    ></i>
-                  ))}
-                </div>
-                
-                <p className="testimonial-text">{testimonial.comment}</p>
-                
-                <div className="user-info">
-                  <div className="user-avatar">
-                    <img src={testimonial.image} alt={testimonial.name} />
-                  </div>
-                  <div className="user-details">
-                    <h4>{testimonial.name}</h4>
-                    <p>{testimonial.title}</p>
-                  </div>
-                </div>
-              </div>
+            {testimonials.slice(0, 2).map((testimonial) => (
+              <Testimonial key={testimonial.id} testimonial={testimonial} />
             ))}
           </div>
         </div>
