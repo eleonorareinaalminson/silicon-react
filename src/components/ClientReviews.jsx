@@ -1,7 +1,7 @@
 import React from 'react'
 
 const ClientReviews = () => {
-  // Statiska recensioner med samma texter som i bilden
+
   const testimonials = [
     {
       id: 1,
