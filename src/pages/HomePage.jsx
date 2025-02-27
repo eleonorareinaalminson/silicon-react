@@ -6,11 +6,13 @@ import HowDoesItWork from '../components/HowDoesItWork'
 import MoneyTransfer from '../components/MoneyTransfer'
 import ReceivePayment from '../components/ReceivePayment'
 import Subscribe from '../components/Subscribe'
+import Hero from '../components/Hero'
 
 const HomePage = () => {
 
   return (
     <>
+      <Hero />
       <Brands />
       <AppFeatures />
       <HowDoesItWork />
