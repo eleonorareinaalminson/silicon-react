@@ -26,11 +26,15 @@
 [data-theme="dark"] {
   --headline-color: #ffffff;
   --text-headline-color: #ffffff;
-  --text-color: #ffffff;
+  --text-color: #ffffffc4;
   --text-muted-color: #585C7B;
   --background-color: #0B0F19;
   --border-color: #2f333b;
   --section-background-color: rgba(255, 255 , 255, 0.05);
+
+  #client-reviews-section .testimonial-card {
+    background-color: rgba(255, 255, 255, 0.05);
+  }
 }
 
 html, body {
@@ -711,6 +715,7 @@ footer {
     }
 
     .testimonial-text {
+      color: var(--text-color);
       flex-grow: 1;
       margin-bottom: 1.5rem;
       font-size: 1rem;
@@ -750,7 +755,6 @@ footer {
       color: var(--text-muted-color);
     }
   }
-  
   
   /* Responsiv anpassning för mindre skärmar */
   @media (max-width: 992px) {
