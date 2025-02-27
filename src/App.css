@@ -14,6 +14,7 @@
   --border-color: #E2E5F1;
   --link-color: #6366F1;
   --green-color: #22C55E;
+  --yellow-color: #FFBA08;
 
   --button-background-color: #6366F1;
   --button-hover-background-color: #8485f2;
@@ -706,7 +707,7 @@ footer {
       display: flex;
       margin-bottom: 0rem;
       gap: 4px;
-      color: #FFBA08;
+      color: var(--yellow-color);
     }
 
     .testimonial-text {
