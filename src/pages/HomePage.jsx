@@ -7,6 +7,7 @@ import MoneyTransfer from '../components/MoneyTransfer'
 import ReceivePayment from '../components/ReceivePayment'
 import Subscribe from '../components/Subscribe'
 import Hero from '../components/Hero'
+import FAQ from '../components/FAQ'
 
 const HomePage = () => {
 
@@ -19,6 +20,7 @@ const HomePage = () => {
       <MoneyTransfer />
       <ReceivePayment />
       <ClientReviews />
+      <FAQ />
       <Subscribe />
     </>
   )
