@@ -343,15 +343,15 @@ section {
 
   .section-title {
     text-align: center;
-    margin-bottom: 4rem;  /* Ökat margin för mer luft under titeln */
+    margin-bottom: 4rem;  
   }
 
   .image-slider {
-    margin: 0 auto;  /* Centrera slider */
-    max-width: 1200px;  /* Begränsa max-bredd */
+    margin: 0 auto;
+    max-width: 1200px;  
     display: grid;
-    grid-template-columns: repeat(3, 1fr);  /* 3 lika stora kolumner */
-    gap: 2rem;  /* Mellanrum mellan bilderna */
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
     margin-bottom: 4rem;
 
     .image-slide {
@@ -360,18 +360,18 @@ section {
       align-items: center;
       
       img {
-        width: 100%;  /* Bilden fyller containern */
-        max-width: 300px;  /* Maxbredd för varje bild */
+        width: 100%;  
+        max-width: 300px;  
         height: auto;
-        object-fit: contain;  /* Behåll bildproportioner */
+        object-fit: contain; 
       }
     }
   }
 
   .section-body {
     text-align: center;
-    max-width: 600px;  /* Begränsa textbredd */
-    margin: 0 auto;  /* Centrera texten */
+    max-width: 600px;  
+    margin: 0 auto;  
     
     h3 {
       margin-bottom: 1rem;
