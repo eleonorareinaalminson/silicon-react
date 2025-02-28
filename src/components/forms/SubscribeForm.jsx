@@ -57,7 +57,7 @@ const SubscribeForm = () => {
             type="email" 
             id="email" 
             name="email" 
-            placeholder="Your email" 
+            placeholder="Your Email" 
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             disabled={isSubmitting}
