@@ -425,6 +425,8 @@ section {
 }
 
 #subscribe-section {
+  padding: 4rem 0;
+
   .container {
     background-color: var(--section-background-color);
     border-radius: 8px;
