@@ -795,7 +795,7 @@ footer {
     padding: 5rem 0;
     padding-bottom: 0;
     background: rgb(99,102,241);
-    background: linear-gradient(360deg, rgba(99,102,241,0.05) 0%, rgba(218,70,239,0.03) 42%, rgba(241,244,253,0.04) 83%);
+    background: linear-gradient(355deg, rgba(99,102,241,0.05) 0%, rgba(218,70,239,0.03) 42%, rgba(241,244,253,0.04) 83%);
     
     .container {
       display: grid;
