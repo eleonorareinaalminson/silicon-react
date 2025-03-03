@@ -1,8 +1,11 @@
 import React from 'react'
+import FAQ from '../components/FAQ'
 
 const ContactPage = () => {
   return (
-    <div>ContactPage</div>
+    <div>
+      <FAQ />
+    </div>
   )
 }
 
