@@ -1,10 +1,12 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { FaqContext } from '../contexts/FaqContext'
 import FaqItem from './elements/FaqItem'
 import ContactOption from './elements/ContactOption'
 
 const FAQ = () => {
-  // Statiska FAQ-frågor med svar
-  const staticFaqs = [
+  const { faqs, loading, error } = useContext(FaqContext);
+
+  const fallbackFaqs = [
     {
       id: 1,
       question: "Is any of my personal information stored in the App?",
@@ -37,13 +39,40 @@ const FAQ = () => {
       answer: "If you forget your password, you can easily reset it through the 'Forgot Password' option on the login screen."
     }
   ];
+  
+  
+  const contactOptions = [
+    {
+      id: 1,
+      title: "Still have questions?",
+      icon: "bi bi-telephone",
+      buttonText: "Contact us",
+      buttonLink: "/contact",
+      iconColor: "#6366F1"
+    },
+    {
+      id: 2,
+      title: "Don't like phone calls?",
+      icon: "bi bi-chat-dots",
+      buttonText: "Contact us",
+      buttonLink: "/contact", 
+      iconColor: "#22C55E"
+    }
+  ];
+
+  const mappedFaqs = faqs.map(faq => ({
+    id: faq.id,
+    question: faq.title,     
+    answer: faq.content      
+  }));
+
+  const displayFaqs = (mappedFaqs && mappedFaqs.length > 0) ? mappedFaqs : fallbackFaqs;
 
   return (
     <section id="faq-section">
       <div className="container">
         <div className="faq-grid">
           
-          {/* FAQ Headline */}
           <div className="faq-headline">
             <h2>Any questions?</h2>
             <h3>Check out the FAQs</h3>
@@ -53,43 +82,49 @@ const FAQ = () => {
             </p>
 
             <div className="contact-options">
-              <div className="contact-option">
-                <div className="contact-icon">
-                  <i className="bi bi-telephone" style={{ color: "#6366F1" }}></i>
-                </div>
-                <div className="contact-title">Still have questions?</div>
-                <a href="/contact" className="contact-button">
-                  Contact us <i className="bi bi-arrow-right"></i>
-                </a>
-              </div>
-
-              <div className="contact-option">
-                <div className="contact-icon">
-                  <i className="bi bi-chat-dots" style={{ color: "#22C55E" }}></i>
-                </div>
-                <div className="contact-title">Don't like phone calls?</div>
-                <a href="/contact" className="contact-button">
-                  Contact us <i className="bi bi-arrow-right"></i>
-                </a>
-              </div>
+              {contactOptions.map(option => (
+                <ContactOption 
+                  key={option.id}
+                  title={option.title}
+                  icon={option.icon} 
+                  buttonText={option.buttonText}
+                  buttonLink={option.buttonLink}
+                  iconColor={option.iconColor}
+                />
+              ))}
             </div>
           </div>
           
-          {/* FAQ Items */}
           <div className="faq-items">
-            {staticFaqs.map((faq) => (
-              <FaqItem 
-                key={faq.id} 
-                question={faq.question} 
-                answer={faq.answer} 
-                isOpen={faq.id === 3} // Öppna bara den tredje frågan (Can I schedule future transfers?)
-              />
-            ))}
+            {loading ? (
+              <div className="loading">Loading FAQs...</div>
+            ) : error ? (
+              <div className="error">
+                <p>Could not load FAQs. Using default questions instead.</p>
+                {fallbackFaqs.map((faq, index) => (
+                  <FaqItem 
+                    key={`fallback-${index}`}
+                    question={faq.question} 
+                    answer={faq.answer} 
+                    isOpen={index === 2}
+                  />
+                ))}
+              </div>
+            ) : (
+              displayFaqs.map((faq, index) => (
+                <FaqItem 
+                  key={faq.id || `faq-${index}`}
+                  question={faq.question} 
+                  answer={faq.answer} 
+                  isOpen={index === 2}
+                />
+              ))
+            )}
           </div>
         </div>
       </div>
     </section>
-  )
+  );
 }
 
 export default FAQ
