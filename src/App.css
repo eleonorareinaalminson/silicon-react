@@ -952,173 +952,159 @@ footer {
       }
     }
   }
+
   /* === FAQ Section Styling === */
 #faq-section {
   padding: 5rem 0;
   background-color: var(--background-color);
-}
 
-#faq-section .container {
-  width: 100%;
-  max-width: 1320px;
-  margin: 0 auto;
-  padding: 0 1rem;
-}
+  .container {
+    width: 100%;
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
 
-#faq-section .faq-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 3rem;
-  
-  @media (width >= 992px) {
-    grid-template-columns: 1fr 2fr;
-    gap: 4rem;
+  .faq-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    
+    @media (width >= 992px) {
+      grid-template-columns: 1fr 2fr;
+      gap: 4rem;
+    }
+  }
+
+  .faq-headline {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .faq-headline h2 {
+    font-size: 32px;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+    color: var(--text-headline-color);
+    line-height: 1.2;
+  }
+
+  .faq-headline h3 {
+    font-size: 32px;
+    font-weight: 800;
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    color: var(--text-headline-color);
+    line-height: 1.2;
+  }
+
+  .faq-description {
+    margin-bottom: 2rem;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--text-color);
+  }
+
+  .contact-options {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    width: 100%;
+  }
+
+  .contact-option {
+    background-color: var(--white-color);
+    border-radius: 8px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    text-align: flex-start;
+    border: 1px solid var(--border-color);
+    /* Göra boxarna mer kvadratiska */
+    aspect-ratio: 1 / 1;
+    width: 100%;
+    max-width: 200px;
+    height: 200px;
+  }
+
+  .contact-icon {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .contact-title {
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    color: var(--text-headline-color);
+    font-size: 1.1rem;
+  }
+
+  .contact-button {
+    color: var(--link-color);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 600;
+  }
+
+  .contact-button:hover {
+    text-decoration: none;
+  }
+
+  .contact-button i {
+    font-size: 0.8rem;
+  }
+
+  .faq-items {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .faq-item {
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: var(--white-color);
+    border: 1px solid var(--border-color);
+  }
+
+  .faq-item.expanded {
+    border-color: var(--button-background-color);
+  }
+
+  .faq-question {
+    padding: 1.25rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--text-headline-color);
+  }
+
+  .faq-question i {
+    color: var(--text-muted-color);
+  }
+  .faq-item.expanded .faq-question i {
+    background-color: var(--button-background-color);
+    color: white;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+  }
+  .faq-answer {
+    padding: 0 1.25rem 1.25rem;
+    color: var(--text-color);
+    line-height: 1.6;
+  }
+  .faq-answer p {
+    margin: 0;
   }
 }
 
-/* === FAQ Headline Area === */
-#faq-section .faq-headline {
-  display: flex;
-  flex-direction: column;
-}
-
-#faq-section .faq-headline h2 {
-  font-size: 32px;
-  font-weight: 800;
-  margin-bottom: 0.5rem;
-  color: var(--text-headline-color);
-  line-height: 1.2;
-}
-
-#faq-section .faq-headline h3 {
-  font-size: 32px;
-  font-weight: 800;
-  margin-top: 0;
-  margin-bottom: 1.5rem;
-  color: var(--text-headline-color);
-  line-height: 1.2;
-}
-
-#faq-section .faq-description {
-  margin-bottom: 2rem;
-  font-size: 1rem;
-  line-height: 1.6;
-  color: var(--text-color);
-}
-
-/* === Contact Options === */
-#faq-section .contact-options {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1.5rem;
-  width: 100%;
-}
-
-#faq-section .contact-option {
-  background-color: var(--white-color);
-  border-radius: 8px;
-  padding: 2rem;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
-  text-align: flex-start;
-  border: 1px solid var(--border-color);
-  /* Göra boxarna mer kvadratiska */
-  aspect-ratio: 1 / 1;
-  width: 100%;
-  max-width: 200px;
-  height: 200px;
-}
-
-#faq-section .contact-icon {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-}
-
-#faq-section .contact-title {
-  font-weight: 600;
-  margin-bottom: 1.5rem;
-  color: var(--text-headline-color);
-  font-size: 1.1rem;
-}
-
-#faq-section .contact-button {
-  color: var(--link-color);
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-weight: 600;
-}
-
-#faq-section .contact-button:hover {
-  text-decoration: none;
-}
-
-#faq-section .contact-button i {
-  font-size: 0.8rem;
-}
-
-/* === FAQ Items === */
-#faq-section .faq-items {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-#faq-section .faq-item {
-  border-radius: 8px;
-  overflow: hidden;
-  background-color: var(--white-color);
-  border: 1px solid var(--border-color);
-}
-
-#faq-section .faq-item.expanded {
-  border-color: var(--button-background-color);
-}
-
-#faq-section .faq-question {
-  padding: 1.25rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  cursor: pointer;
-  font-weight: 600;
-  color: var(--text-headline-color);
-}
-
-#faq-section .faq-question i {
-  color: var(--text-muted-color);
-}
-
-/* Styling för expanderad frågas knapp */
-#faq-section .faq-item.expanded .faq-question i {
-  background-color: var(--button-background-color);
-  color: white;
-  border-radius: 50%;
-  width: 24px;
-  height: 24px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 12px;
-}
-
-#faq-section .faq-answer {
-  padding: 0 1.25rem 1.25rem;
-  color: var(--text-color);
-  line-height: 1.6;
-}
-
-#faq-section .faq-answer p {
-  margin: 0;
-}
-
-/* Dark Mode Specific Adjustments */
-[data-theme="dark"] #faq-section .faq-item {
-  background-color: rgba(255, 255, 255, 0.05);
-}
-
-[data-theme="dark"] #faq-section .contact-option {
-  background-color: rgba(255, 255, 255, 0.05);
-}
