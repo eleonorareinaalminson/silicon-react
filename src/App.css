@@ -1084,6 +1084,8 @@ section {
               
               i {
                 position: absolute;
+                color: #9397AD;
+                font-size: 1.05rem;
                 top: 15px;
                 left: 15px;
               }
