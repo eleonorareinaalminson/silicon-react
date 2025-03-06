@@ -45,7 +45,7 @@ const FAQ = () => {
     {
       id: 1,
       title: "Still have questions?",
-      icon: "bi bi-telephone",
+      icon: "bi bi-telephone-fill",
       buttonText: "Contact us",
       buttonLink: "/contact",
       iconColor: "#6366F1"
@@ -53,7 +53,7 @@ const FAQ = () => {
     {
       id: 2,
       title: "Don't like phone calls?",
-      icon: "bi bi-chat-dots",
+      icon: "bi bi-chat-dots-fill",
       buttonText: "Contact us",
       buttonLink: "/contact", 
       iconColor: "#22C55E"

@@ -16,3 +16,4 @@ const ContactOption = ({ title, icon, buttonText, buttonLink, iconColor }) => {
 }
 
 export default ContactOption
+
