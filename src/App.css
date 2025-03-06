@@ -438,8 +438,8 @@ section {
       margin-bottom: 2rem;
       color: var(--text-color);
       cursor: pointer;
-      font-weight: 500;
-      font-size: 0.9rem;
+      font-weight: 400;
+      font-size: 14px;
 
       i {
         display: flex;
