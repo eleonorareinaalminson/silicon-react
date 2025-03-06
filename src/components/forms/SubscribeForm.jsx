@@ -10,7 +10,6 @@ const SubscribeForm = () => {
     setIsSubmitting(true);
     setMessage(null);
     
-    // Enkel validering
     if (!email || !email.includes('@')) {
       setMessage({ type: 'error', text: 'Please enter a valid email address' });
       setIsSubmitting(false);
