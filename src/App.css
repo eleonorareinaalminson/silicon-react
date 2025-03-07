@@ -38,6 +38,7 @@
   --background-color: #0B0F19;
   --border-color: #2f333b;
   --section-background-color: rgba(255, 255 , 255, 0.05);
+  --gradient-background: rgba(255, 255 , 255, 0.05);
 
   --button-download-background-color: rgba(243, 246, 255, 1);
   --button-download-hover-background-color: rgba(243, 246, 255, 1);;
@@ -120,15 +121,15 @@ h1 {
 }
 
 .wrapper {
-  height: 100dvh;
   display: grid;
   grid-template-rows: auto 1fr auto;
+  height: 100dvh;
 }
 
 .container {
-  width: 100%;
   padding-left: 1rem;
   padding-right: 1rem;
+  width: 100%;
   margin-left: auto;
   margin-right: auto;
 
@@ -143,95 +144,117 @@ h1 {
   }
 }
 
-.switch {
-  position: relative;
-  display: inline-block;
-  width: 60px;
-  height: 30px;
-
-  input { 
-    opacity: 0;
-    width: 0;
-    height: 0;
-
-    &:checked + .slider {
-      background-color: var(--button-background-color);
-    }
-    
-    &:focus + .slider {
-      box-shadow: 0 0 1px var(--button-background-color);
-    }
-    
-    &:checked + .slider:before {
-      -webkit-transform: translateX(26px);
-      -ms-transform: translateX(26px);
-      transform: translateX(26px);
-    }
-
-  } 
-  
-  .slider {
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: var(--text-muted-color);
-    -webkit-transition: .4s;
-    transition: .4s;
-
-    &:before {
-      position: absolute;
-      content: "";
-      height: 26px;
-      width: 26px;
-      left: 4px;
-      bottom: 2px;
-      background-color: #ffffff;
-      -webkit-transition: .4s;
-      transition: .4s;
-    }
-
-    &.round {
-      border-radius: 34px;
-    }
-
-    &.round:before {
-      border-radius: 50%;
-    }
-  }
-}
-
 .toggle-switch {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 1rem;
+  font-weight: 600;
+  
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 30px;
 
-  .switch-label {
-    font-weight: 600;
+    input { 
+      opacity: 0;
+      width: 0;
+      height: 0;
+
+      &:checked + .slider {
+        background-color: var(--button-background-color);
+      }
+      
+      &:focus + .slider {
+        box-shadow: 0 0 1px var(--button-background-color);
+      }
+      
+      &:checked + .slider:before {
+        -webkit-transform: translateX(26px);
+        -ms-transform: translateX(26px);
+        transform: translateX(26px);
+      }
+
+    } 
+    
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: var(--text-muted-color);
+      -webkit-transition: .4s;
+      transition: .4s;
+
+      &:before {
+        position: absolute;
+        content: "";
+        height: 26px;
+        width: 26px;
+        left: 4px;
+        bottom: 2px;
+        background-color: #ffffff;
+        -webkit-transition: .4s;
+        transition: .4s;
+      }
+
+      &.round {
+        border-radius: 34px;
+      }
+
+      &.round:before {
+        border-radius: 50%;
+      }
+    }
   }
 }
 
+form {
+  input {
+      border-radius: 8px 0 0 8px;
+      border: solid var(--border-color);
+      border-width: 1px 0 1px 1px;
+      outline: none;
+      padding: 1rem 2.4rem;
+      font-size: 14px;
+      width: 100%;
+
+      &::placeholder {
+          color: var(--text-muted-color);
+      }
+  }
+
+  .btn {
+      border: none;
+      border-radius: 0 8px 8px 0;
+      font-size: 14px;
+    }
+}
+
 header {
-  padding: 1rem 0;
+  background-color: var(--white-color);
 
   .container {
     display: grid;
-    gap: 2rem;
+    padding: 2rem 0;
+    padding-bottom: 0%;
+    margin-bottom: 0%;
+    gap: 3rem;
     align-items: center;
-    grid-template-columns: 1fr auto auto;
-    grid-template-areas: "logo darkmode menu";
+    grid-template-columns: auto 1fr auto auto;
+    grid-template-areas: "logo" "darkmode" "menu";
   
     @media (width >= 1400px) {
       grid-template-columns: auto 1fr auto auto;
-      grid-template-areas: "logo nav darkmode account";
+      grid-template-areas: "logo" "nav" "darkmode" "account";
     }
   }
 
   .logo {
-    grid-area: logo;
+    grid-area: "logo";
     display: flex;
     align-items: center;
     gap: 0.5rem;
@@ -241,7 +264,7 @@ header {
   }
 
   .main-nav {
-    grid-area: nav;
+    grid-area: "nav";
     display: none;
     font-size: 1em;
     font-weight: 600;
@@ -261,31 +284,36 @@ header {
 
   }
 
-  .darkmode {
-    grid-area: darkmode;
-
+  .toggle-switch {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+  
     .switch-label {
+      font-weight: 600;
       display: none;
-
+      
       @media (width >= 768px) {
-        display: flex;
+        display: block;
       }
     }
-
   }
 
   .account-link {
-    grid-area: account;
+    grid-area: "account";
     display: none;
+    font-size: 1em;
+    font-weight: 400;
 
     @media (width >= 1400px) {
-      display: flex;
+      display: block;
     }
   }
 
   .menu-button {
-    grid-area: menu;
-    display: block;
+    grid-area: "menu";
+    display: flex;
     font-size: 2rem;
 
     @media (width >= 1400px) {
@@ -314,8 +342,9 @@ section {
 
 
 #hero {
-  padding: 5rem 0;
+  padding: 4rem 0;
   padding-bottom: 0;
+  padding-top: 0;
   background: var(--gradient-background);
   
   .container {
@@ -752,9 +781,9 @@ section {
     }
 }
 
-  #client-reviews-section {
-    padding: 4rem 0;
-    background-color: var(--section-background-color);
+#client-reviews-section {
+   padding: 4rem 0;
+   background-color: var(--section-background-color);
 
     .reviews-grid {
       display: grid;
@@ -1093,31 +1122,6 @@ section {
       }
     }
   }
-
-  form {
-    font-size: 14px;
-
-      input {
-          border-radius: 8px 0 0 8px;
-          border: solid var(--border-color);
-          border-width: 1px 0 1px 1px;
-          outline: none;
-          padding: 1rem 2.4rem;
-          font-size: 14px;
-          width: 100%;
-
-          &::placeholder {
-              color: var(--text-muted-color);
-          }
-      }
-
-      .btn {
-          border: none;
-          border-radius: 0 8px 8px 0;
-          font-size: 14px;
-        }
-  }
-
 
   footer {
     font-size: 14px;

@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-const LinkButton = ({to, text, color, icon, after}) => {
+const LinkButton = ({to, text, icon, after}) => {
 
     if (after) {
     return (
