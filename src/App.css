@@ -503,6 +503,11 @@ section {
 
 #brands {
   padding: 4rem 0;
+  display: none;
+  
+  @media (width >= 768px) {
+    display: block;
+  }
 
   .imageslider {
     display: flex;
@@ -510,6 +515,7 @@ section {
     justify-content: space-between;
     align-items: center;
     gap: 1rem;
+    flex-wrap: wrap;
   }
   
   .imageslider-item {
@@ -521,7 +527,6 @@ section {
     align-items: center;
     border-radius: 8px;
   }
-  
 }
 
 #app-features-section {
