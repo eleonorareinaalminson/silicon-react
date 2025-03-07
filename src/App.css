@@ -291,11 +291,11 @@ header {
     gap: 1rem;
   
     .switch-label {
-      font-weight: 600;
+      font-weight: 400;
       display: none;
       
       @media (width >= 768px) {
-        display: block;
+        display: inline-block;
       }
     }
   }
