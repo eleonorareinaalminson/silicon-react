@@ -18,15 +18,9 @@ A modern, responsive banking application built with React and Vite. Silicon offe
 - **📧 Newsletter**: Subscribe to stay updated
 - **🔒 Secure**: Built with security best practices
 
-## 🚀 Live Demo
+## 🚀 Live Demo (In Progress)
 
 [View Live Application](https://your-app-url.com) <!-- Replace with your actual URL -->
-
-## 📱 Screenshots
-
-| Desktop View | Mobile View |
-|--------------|-------------|
-| ![Desktop](https://via.placeholder.com/400x250?text=Desktop+View) | ![Mobile](https://via.placeholder.com/200x350?text=Mobile+View) |
 
 ## 🛠️ Built With
 
