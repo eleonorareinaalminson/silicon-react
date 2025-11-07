@@ -14,8 +14,6 @@ A modern banking application built with React and Vite. Silicon offers a sleek i
 - **📧 Newsletter**: Subscribe to stay updated
 - **🔒 Secure**: Built with security best practices
 
-## 🚀 Live Demo (In Progress)
-
 ## 🛠️ Built With
 
 - **Frontend Framework**: React 19.0.0
