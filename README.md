@@ -1,10 +1,6 @@
 # Silicon React 🏦
 
-A modern, responsive banking application built with React and Vite. Silicon offers a sleek interface for managing your finances with features like money transfers, payment processing, and comprehensive banking tools.
-
-![Silicon App Preview](https://img.shields.io/badge/Status-Active-success)
-![React](https://img.shields.io/badge/React-19.0.0-blue)
-![Vite](https://img.shields.io/badge/Vite-6.1.0-646CFF)
+A modern banking application built with React and Vite. Silicon offers a sleek interface for managing your finances with features like money transfers, payment processing, and comprehensive banking tools.
 
 ## ✨ Features
 
@@ -19,8 +15,6 @@ A modern, responsive banking application built with React and Vite. Silicon offe
 - **🔒 Secure**: Built with security best practices
 
 ## 🚀 Live Demo (In Progress)
-
-[View Live Application](https://your-app-url.com) <!-- Replace with your actual URL -->
 
 ## 🛠️ Built With
 
@@ -168,11 +162,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - Fonts by [Google Fonts](https://fonts.google.com/)
 - API services by [Kyhn24 Azure Services](https://kyhn24.azurewebsites.net/)
 
-## 📞 Support
-
-If you have any questions or need help, please feel free to:
-
-- 📧 Email: support@silicon-app.com
 - 💬 Open an issue on GitHub
 - 📱 Contact us through the app
 
